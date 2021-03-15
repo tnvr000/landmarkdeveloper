@@ -12,4 +12,79 @@
  *
  *= require_tree .
  *= require_self
- */
+*/
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.site-container {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* background-color: aquamarine; */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+    'header'
+    'content'
+    'footer'
+  ;
+}
+
+header {
+  display: flex;
+  grid-area: 'header';
+  flex-direction: row;
+}
+
+header .title {
+  font-size: 30px;
+  padding: 5px 10px;
+  width: 40%;
+}
+
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 60%;
+}
+
+header nav .item {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+header nav .item:hover {
+  color: white;
+  background-color: aqua;
+}
+
+header nav .active {
+  color: black;
+  background-color: aqua;
+}
+
+header nav .active:hover {
+  color: black;
+  background-color: aqua;
+}
+
+.main-content {
+  /* background-color: blue; */
+  grid-area: 'content';
+}
+
+footer {
+  display: flex;
+  grid-area: 'footer';
+}

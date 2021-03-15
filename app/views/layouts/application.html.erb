@@ -10,6 +10,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="site-container">
+      <%= render partial: '/layouts/shared/header' %>
+      <%= yield %>
+      <%= render partial: '/layouts/shared/footer' %>
+    </div>
   </body>
 </html>
