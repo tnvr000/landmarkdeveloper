@@ -1,0 +1,22 @@
+<%= form_with(model: admin_photograph, local: true) do |form| %>
+  <% if admin_photograph.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(admin_photograph.errors.count, "error") %> prohibited this admin_photograph from being saved:</h2>
+
+      <ul>
+      <% admin_photograph.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :caption %>
+    <%= form.text_field :caption %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
