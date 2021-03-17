@@ -29,10 +29,9 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  /* background-color: aquamarine; */
   display: grid;
   grid-template-rows: auto 1fr auto;
-  grid-template-areas: 
+  grid-template-areas:
     'header'
     'content'
     'footer'
@@ -59,14 +58,18 @@ header nav {
 }
 
 header nav .item {
+  box-sizing: border-box;
   padding: 10px 20px;
   text-decoration: none;
   color: black;
+  transition: 1s ease;
+  border-radius: 3px;
 }
 
 header nav .item:hover {
   color: white;
   background-color: aqua;
+  transition: 0.15s ease;
 }
 
 header nav .active {
@@ -80,7 +83,6 @@ header nav .active:hover {
 }
 
 .main-content {
-  /* background-color: blue; */
   grid-area: 'content';
 }
 

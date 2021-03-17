@@ -12,7 +12,9 @@
   <body>
     <div class="site-container">
       <%= render partial: '/layouts/shared/header' %>
-      <%= yield %>
+      <div class="main-content">
+        <%= yield %>
+      </div>
       <%= render partial: '/layouts/shared/footer' %>
     </div>
   </body>

@@ -1,3 +1,120 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.notifications {
+  padding: 10px 5px 0px 5px;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.carousel-container {
+  width: 55%;
+  position: relative;
+}
+
+.contact-container {
+  background-color: aquamarine;
+  width: 45%;
+}
+
+.carousel {
+  width: 100%;
+  height: 350px;
+  position: relative;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-container .unit-nav {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 20px 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  transition: 0.5s ease;
+  user-select: none;
+}
+
+.carousel-container .prev {
+  left: 0;
+  border-radius: 0px 3px 3px 0;
+}
+
+.carousel-container .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.carousel-container .prev:hover, .carousel-container .next:hover {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.carousel-dots {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.carousel-dots .dot {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin: 3px 4px;
+  transition: 0.6s ease;
+}
+
+.carousel-dots .active, .carousel-dots .dot:hover {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.carousel .caption-container {
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  right: 0;
+}
+
+.carousel .caption-container .caption {
+  background-color: rgba(0, 0, 0, 0.75);
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 4px 25px;
+  color: white;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
