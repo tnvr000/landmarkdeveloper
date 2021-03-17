@@ -2,8 +2,16 @@
 
 <p>
   <strong>Caption:</strong>
-  <%= @admin_photograph.caption %>
+  <%= @photograph.caption %>
 </p>
+<p>
+  <strong>Used in Carousel: </strong>
+  <%= @photograph.use_in_carousel? ? 'Yes' : 'No' %>
+</p>
+<div>
+  <%= image_tag @photograph.photo.url %>
+</div>
 
-<%= link_to 'Edit', edit_admin_photograph_path(@admin_photograph) %> |
+<%= link_to 'Edit', edit_admin_photograph_path(@photograph) %> |
+<%= link_to 'Re-Upload', reupload_admin_photograph_path(@photograph) %> |
 <%= link_to 'Back', admin_photographs_path %>

@@ -1,9 +1,9 @@
 class Admin::PhotographsController < Admin::ApplicationController
-  before_action :set_admin_photograph, only: %i[ show edit update destroy ]
+  before_action :set_admin_photograph, only: %i[ show edit reupload update destroy ]
 
   # GET /admin/photographs or /admin/photographs.json
   def index
-    @admin_photographs = Admin::Photograph.all
+    @photographs = Photograph.all
   end
 
   # GET /admin/photographs/1 or /admin/photographs/1.json
@@ -12,24 +12,28 @@ class Admin::PhotographsController < Admin::ApplicationController
 
   # GET /admin/photographs/new
   def new
-    @admin_photograph = Admin::Photograph.new
+    @photograph = Photograph.new
   end
 
   # GET /admin/photographs/1/edit
   def edit
   end
 
+  # GET /admin/photographs/1/reupload
+  def reupload
+  end
+
   # POST /admin/photographs or /admin/photographs.json
   def create
-    @admin_photograph = Admin::Photograph.new(admin_photograph_params)
+    @photograph = Photograph.new(admin_photograph_params)
 
     respond_to do |format|
-      if @admin_photograph.save
-        format.html { redirect_to @admin_photograph, notice: "Photograph was successfully created." }
-        format.json { render :show, status: :created, location: @admin_photograph }
+      if @photograph.save
+        format.html { redirect_to admin_photographs_url, notice: "Photograph was successfully created." }
+        format.json { render :show, status: :created, location: @photograph }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @admin_photograph.errors, status: :unprocessable_entity }
+        format.json { render json: @photograph.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -37,19 +41,19 @@ class Admin::PhotographsController < Admin::ApplicationController
   # PATCH/PUT /admin/photographs/1 or /admin/photographs/1.json
   def update
     respond_to do |format|
-      if @admin_photograph.update(admin_photograph_params)
-        format.html { redirect_to @admin_photograph, notice: "Photograph was successfully updated." }
-        format.json { render :show, status: :ok, location: @admin_photograph }
+      if @photograph.update(admin_photograph_params)
+        format.html { redirect_to admin_photograph_url(@photograph), notice: "Photograph was successfully updated." }
+        format.json { render :show, status: :ok, location: @photograph }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @admin_photograph.errors, status: :unprocessable_entity }
+        format.json { render json: @photograph.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /admin/photographs/1 or /admin/photographs/1.json
   def destroy
-    @admin_photograph.destroy
+    @photograph.destroy
     respond_to do |format|
       format.html { redirect_to admin_photographs_url, notice: "Photograph was successfully destroyed." }
       format.json { head :no_content }
@@ -57,13 +61,13 @@ class Admin::PhotographsController < Admin::ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_admin_photograph
-      @admin_photograph = Admin::Photograph.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_admin_photograph
+    @photograph = Photograph.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def admin_photograph_params
-      params.require(:admin_photograph).permit(:caption)
-    end
+  # Only allow a list of trusted parameters through.
+  def admin_photograph_params
+    params.require(:photograph).permit(:caption, :photo, :use_in_carousel)
+  end
 end

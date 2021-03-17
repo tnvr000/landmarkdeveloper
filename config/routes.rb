@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'homes#index'
-    
+
     devise_for :users, controllers: {
       sessions: 'admin/sessions',
       registrations: 'admin/registrations'
@@ -17,6 +17,10 @@ Rails.application.routes.draw do
       root to: 'admin/homes#index', as: :user_root
     end
 
-    resources :photographs
+    resources :photographs do 
+      member do
+        get :reupload
+      end
+    end
   end
 end

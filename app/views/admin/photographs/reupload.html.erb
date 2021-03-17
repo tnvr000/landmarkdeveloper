@@ -1,14 +1,10 @@
-<h1>Editing Photograph</h1>
+<h1>Re-Upload Photograph</h1>
 
 
 <%= form_for(@photograph, url: admin_photograph_path(@photograph), method: :patch) do |form| %>
   <div class="field">
-    <%= form.label :caption %>
-    <%= form.text_field :caption %>
-  </div>
-  <div class="feild">
-    <%= form.label :use_in_carousel %>
-    <%= form.check_box :use_in_carousel %>
+    <%= form.label :photo %>
+    <%= form.file_field :photo %>
   </div>
 
   <div class="actions">
