@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 # use devise for authentication
 gem 'devise'
+# use paperclip for image processing and storage
+gem 'paperclip'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
