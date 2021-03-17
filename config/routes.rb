@@ -5,4 +5,10 @@ Rails.application.routes.draw do
   get '/gallery', to: 'homes#gallery'
   get '/contact', to: 'homes#contact'
   get '/about', to: 'homes#about'
+
+  namespace :admin do
+    devise_for :users, controllers: {
+      sessions: 'admin/sessions'
+    }
+  end
 end
