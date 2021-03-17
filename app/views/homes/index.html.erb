@@ -4,25 +4,22 @@
 </div>
 <div class="home-content">
   <div class="carousel-container">
-    <div class="carousel fade">
-      <img src="/images/img1.jpg" />
-      <div class="caption-container"><span class="caption">Text 1</span></div>
-    </div>
-    <div class="carousel fade">
-      <img src="/images/img2.jpg" />
-      <div class="caption-container"><span class="caption">Text 2</span></div>
-    </div>
-    <div class="carousel fade">
-      <img src="/images/img3.jpg" />
-      <div class="caption-container"><span class="caption">Text 3</span></div>
-    </div>
+    <%# byebug %>
+    <% @carousel_photos.each do |photograph| %>
+      <div class="carousel fade">
+        <%= image_tag photograph.photo.url %>
+        <div class="caption-container">
+          <span class="caption"><%= photograph.caption %></span>
+        </div>
+      </div>
+    <% end %>
 
     <a class="unit-nav prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="unit-nav next" onclick="plusSlides(1)">&#10095;</a>
     <div class="carousel-dots">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
+      <% (1..@carousel_photos.length).each do |i| %>
+        <span class="dot" onclick="currentSlide(<%= i %>)"></span>
+      <% end %>
     </div>
   </div>
   <div class="contact-container">

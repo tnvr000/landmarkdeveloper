@@ -1,9 +1,9 @@
 <header>
   <div class="title">LANDMARK&nbsp;DEVELOPER</div>
   <nav>
-    <a href="/" class="item active">HOME</a>
-    <a href="/gallery" class="item">GALLERY</a>
-    <a href="/contact" class="item">CONTACT US</a>
-    <a href="/about" class="item">ABOUT US</a>
+    <%= link_to 'HOME', root_path, class: header_nav_classes('index') %>
+    <%= link_to 'GALLERY', gallery_path, class: header_nav_classes('gallery') %>
+    <%= link_to 'CONTACT US', contact_path, class: header_nav_classes('contact') %>
+    <%= link_to 'ABOUT US', about_path, class: header_nav_classes('about') %>
   </nav>
 </header>

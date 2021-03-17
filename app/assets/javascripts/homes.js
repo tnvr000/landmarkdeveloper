@@ -18,6 +18,7 @@ function showSlides(n) {
   var i;
   var slides = $('.carousel');
   var dots = $('.dot');
+  // if(slides.length <= 0) return;
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
 
