@@ -11,7 +11,7 @@ module AuthenticationHelper
     end
 
     def contact_no_regex
-      /^\d{10}$/
+      /\A\d{10}\z/
     end
 
     def bad_contact_no_message

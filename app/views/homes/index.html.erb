@@ -24,7 +24,21 @@
   </div>
   <div class="contact-container">
     <div class="contact">
-
+      <%= form_for(@client, url: client_path, method: :post, class: 'client-form') do |form| %>
+        <div>
+          <%= form.text_field :name, placeholder: 'Name' %>
+        </div>
+        <div>
+          <%= form.text_field :email, placeholder: 'Email' %>
+        </div>
+        <div>
+          <%= form.text_field :contact_no, placeholder: 'Phone Number' %>
+        </div>
+        <div>
+          <%= form.text_field :note, placeholder: 'Specific Interest' %>
+        </div>
+        <%= form.submit 'Submit' %>
+      <% end %>
     </div>
   </div>
 </div>
