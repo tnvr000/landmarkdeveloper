@@ -1,0 +1,15 @@
+<h1><%= @client.name %></h1>
+<div>
+  <label><strong>Email: </strong></label>
+  <label><%= @client.email %></label>
+</div>
+<div>
+  <label><strong>Phone Number: </strong></label>
+  <label><%= @client.contact_no %></label>
+</div>
+<div>
+  <label><strong>Note: </strong></label>
+  <label><%= @client.note %></label>
+</div>
+<%= link_to('Edit', edit_admin_client_path(@client)) %> |
+<%= link_to('Back', admin_clients_path) %>

@@ -25,5 +25,6 @@ Rails.application.routes.draw do
     end
 
     resources :marquees
+    resources :clients
   end
 end

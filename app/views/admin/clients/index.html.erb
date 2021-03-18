@@ -1,0 +1,27 @@
+<h1>Client</h1>
+<% if @clients.present? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Note</th>
+        <th colspan="2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @clients.each do |client| %>
+        <tr>
+          <td><%= link_to(client.name, admin_client_path(client)) %></td>
+          <td><%= client.email %></td>
+          <td><%= client.contact_no %></td>
+          <td><%= client.note %></td>
+          <td><%= link_to('Edit', edit_admin_client_path(client)) %></td>
+          <td><%= link_to('Destroy', admin_client_path(client), method: :delete, data: { confirm: 'Are You Sure' }) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+<%= link_to 'Home', admin_root_path %>
