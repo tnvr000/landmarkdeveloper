@@ -1,4 +1,13 @@
 <h1>Hello, Admin</h1>
+<% if @notifications.present? %>
+  <div>
+    <% @notifications.each do |notification| %>
+      <div>
+        <%= link_to(notification.description, admin_client_path(notification.client)) %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 <%= link_to 'Sign out', destroy_admin_user_session_path, method: :delete %> | 
 <%= link_to 'Gallery', admin_photographs_path %> |
 <%= link_to 'Marquees', admin_marquees_path %> |

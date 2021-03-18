@@ -8,6 +8,7 @@ class HomesController < ApplicationController
   def client
     @client = Client.new(client_params)
     if @client.save
+      Notification.create_notification(@client)
       redirect_to root_path, notice: 'Thank you for your interest. We will contact you soon.'
     else
       @carousel_photos = Photograph.carousel_photos

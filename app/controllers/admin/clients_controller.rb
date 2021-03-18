@@ -5,6 +5,8 @@ class Admin::ClientsController < Admin::ApplicationController
 
   def show
     @client = Client.find_by_id(params[:id])
+    notification = @client.notification
+    notification.update_attributes(seen: true) if notification.present?
   end
 
   def edit
@@ -14,7 +16,7 @@ class Admin::ClientsController < Admin::ApplicationController
   def update
     @client = Client.find_by_id(params[:id])
     if @client.save
-      redirect_to :admin_clients_url, notice: 'Client Updated successfully.'
+      redirect_to admin_clients_url, notice: 'Client Updated successfully.'
     else
       render :edit, alert: 'Client could not be updated.'
     end
@@ -27,5 +29,6 @@ class Admin::ClientsController < Admin::ApplicationController
     else
       flash[:alert] = 'Client could not be deleted.'
     end
+    redirect_to admin_clients_url
   end
 end
