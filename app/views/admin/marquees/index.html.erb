@@ -1,0 +1,23 @@
+<h1>Marquees</h1>
+<% if @marquees.present? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Marquee</th>
+        <th colspan="3">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @marquees.each do |marquee| %>
+        <tr>
+          <td><%= marquee.text %></td>
+          <td><%= link_to "Show", admin_marquee_path(marquee) %></td>
+          <td><%= link_to "Edit", edit_admin_marquee_path(marquee) %></td>
+          <td><%= link_to "Destroy", admin_marquee_path(marquee), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+<%= link_to 'New Marquee', new_admin_marquee_path %> |
+<%= link_to 'Home', admin_root_path %>

@@ -1,0 +1,10 @@
+<h1>Edit Marquee</h1>
+<%= form_for @marquee, url: admin_marquee_path(@marquee), method: :patch do |form| %>
+  <div>
+    <%= form.label :text %>
+    <%= form.text_field :text %>
+  </div>
+
+  <%= form.submit 'Edit Marquee' %>
+<% end %>
+<%= link_to 'Back', admin_marquees_path %>

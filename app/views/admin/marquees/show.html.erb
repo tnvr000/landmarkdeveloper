@@ -1,0 +1,8 @@
+<h1>Maruqee</h1>
+<div>
+  <span><strong>Text: </strong></span>
+  <span><%= @marquee.text %></span>
+</div>
+<%= link_to 'Edit', edit_admin_marquee_path(@marquee) %> |
+<%= link_to 'Delete', admin_marquee_path(@marquee), method: :delete, data: {confirm: 'Are you sure?'} %> |
+<%= link_to 'Back', admin_marquees_path %>

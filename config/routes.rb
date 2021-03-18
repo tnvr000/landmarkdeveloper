@@ -22,5 +22,7 @@ Rails.application.routes.draw do
         get :reupload
       end
     end
+
+    resources :marquees
   end
 end
