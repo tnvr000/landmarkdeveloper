@@ -1,0 +1,53 @@
+/* Coolors Exported Palette - https://coolors.co/ebfdff-8235b2-008fc5-90c500-000024 */
+
+/* CSS HEX */
+// --azure-x-11-web-color: #ebfdffff;
+// --dark-orchid: #8235b2ff;
+// --blue-ncs: #008fc5ff;
+// --yellow-green: #90c500ff;
+// --oxford-blue: #000024ff;
+
+/* CSS HSL */
+// --azure-x-11-web-color: hsla(186, 100%, 96%, 1);
+// --dark-orchid: hsla(277, 54%, 45%, 1);
+// --blue-ncs: hsla(196, 100%, 39%, 1);
+// --yellow-green: hsla(76, 100%, 39%, 1);
+// --oxford-blue: hsla(240, 100%, 7%, 1);
+
+
+/* SCSS HSL */
+// $azure-x-11-web-color: hsla(186, 100%, 96%, 1);
+// $dark-orchid: hsla(277, 54%, 45%, 1);
+// $blue-ncs: hsla(196, 100%, 39%, 1);
+// $yellow-green: hsla(76, 100%, 39%, 1);
+// $oxford-blue: hsla(240, 100%, 7%, 1);
+
+/* SCSS RGB */
+// $azure-x-11-web-color: rgba(235, 253, 255, 1);
+// $dark-orchid: rgba(130, 53, 178, 1);
+// $blue-ncs: rgba(0, 143, 197, 1);
+// $yellow-green: rgba(144, 197, 0, 1);
+// $oxford-blue: rgba(0, 0, 36, 1);
+
+/* SCSS HEX */
+$light-base-color: #cdf6ff;
+$dark-base-color: #000024;
+$light-base-complementary-color: #fff1eb;
+$primary-color: #00c7c2;
+$secondary-color: #008fc5;
+$accent-color: #8235b2;
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, $primary-color, $secondary-color);
+$gradient-bottom: linear-gradient(180deg, $primary-color, $secondary-color);
+$nav-gradient: linear-gradient(0, $primary-color, $secondary-color);
+$nav-active-gradient: linear-gradient(0deg, $primary-color, $secondary-color);
+// $gradient-top: linear-gradient(0deg, #ebfdff, #8235b2, #008fc5, #90c500, #000024);
+// $gradient-right: linear-gradient(90deg, #ebfdff, #8235b2, #008fc5, #90c500, #000024);
+// $gradient-bottom: linear-gradient(180deg, #ebfdff, #8235b2, #008fc5, #90c500, #000024);
+// $gradient-left: linear-gradient(270deg, #ebfdff, #8235b2, #008fc5, #90c500, #000024);
+// $gradient-top-right: linear-gradient(45deg, #ebfdff, #8235b2, #008fc5, #90c500, #000024);
+// $gradient-bottom-right: linear-gradient(135deg, #ebfdff, #8235b2, #008fc5, #90c500, #000024);
+// $gradient-top-left: linear-gradient(225deg, #ebfdff, #8235b2, #008fc5, #90c500, #000024);
+// $gradient-bottom-left: linear-gradient(315deg, #ebfdff, #8235b2, #008fc5, #90c500, #000024);
+// $gradient-radial: radial-gradient(#ebfdff, #8235b2, #008fc5, #90c500, #000024);
