@@ -1,1 +1,12 @@
-gallery
+<h1 class="subtitle">
+  GALLERY
+</h1>
+<% if @photographs.present? %>
+  <div class="gallery">
+    <% @photographs.each do |photograph| %>
+      <div class="gallery-item">
+        <%= image_tag(photograph.photo.url(:medium)) %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -18,7 +18,7 @@ class HomesController < ApplicationController
   end
 
   def gallery
-    
+    @photographs = Photograph.order(:id)
   end
 
   def contact
