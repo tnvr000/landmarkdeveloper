@@ -194,6 +194,13 @@
   }
 }
 
+.subtitle {
+  font-size: 1.8em;
+  font-weight: bold;
+  padding: 15px;
+  color: $dark-base-color;
+}
+
 // #region gallery
 .gallery {
   display: flex;
@@ -209,4 +216,43 @@
     margin: 0 10px 10px 5px;
   }
 }
+// #endregion
+
+// #region about us
+  .about-info-container {
+    color: $secondary-color;
+    font-size: 2.5em;
+    line-height: 1em;
+    .about-info-right {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-image: $gradient-right;
+    }
+    .about-info-left {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      background-image: $gradient-left;
+    }
+    .about-info-image {
+      flex-basis: 50%;
+      box-sizing: border-box;
+      padding: 25px;
+      img {
+        display: block;
+        margin: auto;
+        width: 100%;
+        height: auto;
+      }
+      .certificate {
+        height: 600px;
+        width: auto;
+      }
+    }
+    .about-info-text {
+      flex-basis: 50%;
+      text-align: center;
+    }
+  }
 // #endregion
